@@ -1,0 +1,130 @@
+/* CSS Styling */
+:root {
+    --primary-yellow: #fce100;
+    --primary-pink: #e60073;
+    --text-dark: #333;
+    --bg-light: #f4f4f9;
+    --weak: #ff4d4d;
+    --moderate: #ffa500;
+    --strong: #28a745;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: var(--text-dark);
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px;
+    border-top: 6px solid var(--primary-yellow);
+}
+
+h2 {
+    margin-top: 0;
+    text-align: center;
+    color: var(--text-dark);
+    font-size: 1.5rem;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+input[type="password"], input[type="text"] {
+    width: 100%;
+    padding: 12px 15px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--primary-pink);
+}
+
+.toggle-visibility {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 0.85rem;
+    color: #666;
+    user-select: none;
+}
+
+.strength-meter {
+    height: 8px;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.strength-bar {
+    height: 100%;
+    width: 0;
+    border-radius: 4px;
+    transition: width 0.4s ease, background-color 0.4s ease;
+}
+
+.feedback-text {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1rem;
+    min-height: 24px;
+}
+
+.criteria-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.criteria-list li {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    color: #666;
+    transition: color 0.3s;
+}
+
+.criteria-list li::before {
+    content: '✖';
+    margin-right: 10px;
+    color: #ccc;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.criteria-list li.valid {
+    color: var(--strong);
+}
+
+.criteria-list li.valid::before {
+    content: '✔';
+    color: var(--strong);
+}
